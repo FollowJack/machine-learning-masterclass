@@ -2,7 +2,7 @@
 ## Get started
 ### Prerequesites
 Dependencies that have to be installed:
-- Conda
+- Pip
 - Pytorch
 
 ## Run
