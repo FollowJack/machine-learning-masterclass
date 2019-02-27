@@ -33,9 +33,9 @@ Key Questions answered in the objective:
 ## Objective
 (1) The goal of the project is to support and assist the time trackers and habit formers (customer) on their journey to save time and spend it more wisely. (2) This will push the customer to strengthen habits and identify bad habits and time-burning activities to get rid of.
 
-(3) By early feature testing we can measure the acceptance of the feature based on ratings changes.
+(3) By early feature testing we can measure the acceptance of the feature based on ratings changes in the app store.
 
-(4) At time of writing the feature is not available and early experiments with recommendations based on the past 3-4 weeks were misleading.
+(4) At time of writing the feature (recommendation) is not available and early experiments with recommendations based on the past 3-4 weeks were misleading.
 
 (5) The app [SaveMyTime](http://savemytime.co/en/) could loose their total customer base if the feature would be used by their competititors, due to the convenient support of time saving and automated guidance.
 
