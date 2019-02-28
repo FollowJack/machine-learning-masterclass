@@ -57,3 +57,7 @@ For this we will find out:
 - can boxplot help?
 - should we build a model for analysis of week / month / year
 - fix structural errors
+- remove unwanted outliers
+- create new features?
+- group together activities?
+- encode dummy variables?
