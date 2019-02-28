@@ -50,3 +50,10 @@ For this we will find out:
 - which activities have the highest occurences
 - which activities have the highest time spend on
 (- what is the mean, median, standard deviation of ???)
+
+
+# TODO
+- check correlations
+- can boxplot help?
+- should we build a model for analysis of week / month / year
+- fix structural errors
