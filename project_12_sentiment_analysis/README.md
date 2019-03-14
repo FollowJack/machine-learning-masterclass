@@ -5,6 +5,9 @@ Basic twitter sentiment analysis based on
 Run ```bash ./start.sh``` for jupyter notebook.   
 Run ```bash ./start_server.sh``` for flask server.  
 
+## Dependencies:
+- [Tweepy](http://www.tweepy.org/)
+- [TextBlob](https://textblob.readthedocs.io/en/dev/)
 
 ## Credits to
 Siraj twitter analysis: https://github.com/llSourcell/twitter_sentiment_challenge
