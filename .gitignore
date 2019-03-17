@@ -105,3 +105,6 @@ venv.bak/
 
 
 .DS_Store
+
+project_09_tensorflow/test
+project_08_pytorch/test
