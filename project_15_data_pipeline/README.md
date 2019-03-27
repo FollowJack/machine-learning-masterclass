@@ -2,6 +2,12 @@
 Course for creating beautiful data pipelines
 
 ## Get Started
+Run command below for given rights to execute.
+```bash
+chmod +x start.sh scripts/dependencies.sh scripts/jupyter.sh scripts/virtualenv.sh
+```
+
+
 Run ```bash ./start.sh``` for jupyter notebook.   
 
 ## Dependencies:
