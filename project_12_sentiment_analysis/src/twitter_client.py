@@ -1,3 +1,4 @@
+import yaml
 import tweepy
 from textblob import TextBlob
 
@@ -6,10 +7,14 @@ Generic Twitter Client
 '''
 class TwitterClient:
     def __init__(self):
-        consumer_key= 'Z3dK7LmOsfjxY0wUDRrhzhtuf'
-        consumer_secret= 'pCSoTeyTV9vqocSAPC4YroFGguWbYC994G68DSpFpivb4kzQBG'
-        access_token='917532542949085189-WmnK90WIkLVblHTavb1oS70rFvckZd7'
-        access_token_secret='nqqMIGpS3n6p0Grf34PxZqmi331Ngfl6I4NKexWx9Fcs9'
+        with open("config.yml", 'r') as ymlfile:
+            twitter_config = yaml.load(ymlfile)
+
+        consumer_key = twitter_config['twitter']['consumer_key']
+        consumer_secret = twitter_config['twitter']['consumer_secret']
+
+        access_token= twitter_config['twitter']['access_token']
+        access_token_secret= twitter_config['twitter']['access_token_secret']
 
         self.auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         self.auth.set_access_token(access_token, access_token_secret)

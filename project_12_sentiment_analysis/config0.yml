@@ -1,4 +1,5 @@
 # Add you twitter credentials here
+# Remove zero (0) from config name
 twitter:
   consumer_key:
   consumer_secret:
