@@ -108,3 +108,4 @@ venv.bak/
 
 project_09_tensorflow/test
 project_08_pytorch/test
+*/config.yml
