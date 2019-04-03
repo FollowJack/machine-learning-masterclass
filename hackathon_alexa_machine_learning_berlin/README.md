@@ -16,7 +16,7 @@ chmod +x start.sh scripts/dependencies.sh scripts/jupyter.sh scripts/virtualenv.
 
 Run ```bash ./start.sh``` for jupyter notebook.   
 
-After running the start.sh change Kernel in your jupyter notebook to ```venv```
+After running the start.sh change Kernel in your jupyter notebook to ```venv```.
 
 ## Dependencies:
 See requirements.txt
