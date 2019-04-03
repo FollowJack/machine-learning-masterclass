@@ -1,6 +1,12 @@
 # Predicting house prices - regression
 Notebooks for data exploratory analysis, data cleaning, feature engineering and model training, data pipeline and model evaluation of house prices.
 
+Content:
+- dataframes
+- countplots
+- boxplots (segmentations)
+- groupby
+- correlations as heatmaps
 
 ## Get Started
 Run command below to give rights to execute scripts.
