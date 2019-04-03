@@ -4,3 +4,6 @@ seaborn
 matplotlib
 scipy
 scikit-learn
+missingno
+turicreate
+sqlalchemy

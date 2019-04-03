@@ -43,21 +43,10 @@ We will create the feature by analyzing activity data from SaveMyTime App and bu
 We will support users to form habits and get deeper insights into their daily habits. Predicting an activity is established at given time based on the past results.
 
 For this we will find out:
-1. total time spend on categories
+- total time spend on categories
 - average time spend on categories
 - the total time spend on activities
 - average time spend on activities
 - which activities have the highest occurences
 - which activities have the highest time spend on
-(- what is the mean, median, standard deviation of ???)
-
-
-# TODO
-- check correlations
-- can boxplot help?
-- should we build a model for analysis of week / month / year
-- fix structural errors
-- remove unwanted outliers
-- create new features?
-- group together activities?
-- encode dummy variables?
+(- what is the mean, median, standard deviation)
