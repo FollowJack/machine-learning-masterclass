@@ -26,7 +26,7 @@ Content:
 - project delivery
 
 ## Get Started
-Run command below for given rights to execute.
+Run command below to give rights to execute bash scripts.
 ```bash
 chmod +x start.sh scripts/dependencies.sh scripts/jupyter.sh scripts/virtualenv.sh
 ```
