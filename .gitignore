@@ -109,3 +109,5 @@ venv.bak/
 project_09_tensorflow/test
 project_08_pytorch/test
 */config.yml
+project_07_tensorflow_keras/data/test
+project_07_tensorflow_keras/data/train
