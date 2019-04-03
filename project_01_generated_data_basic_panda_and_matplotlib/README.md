@@ -1,5 +1,5 @@
 # Panda basics
-Notebooks for pandas introduction and visualization.
+Notebooks for pandas introduction and visualization with seaborn.
 
 ## Get Started
 Run command below for given rights to execute.
@@ -7,7 +7,9 @@ Run command below for given rights to execute.
 chmod +x start.sh scripts/dependencies.sh scripts/jupyter.sh scripts/virtualenv.sh
 ```
 
-Run ```bash ./start.sh``` for jupyter notebook.   
+Run ```bash ./start.sh``` for jupyter notebook.
+
+After running the start.sh change Kernel in your jupyter notebook to ```venv```.
 
 ## Dependencies:
 See requirements.txt
