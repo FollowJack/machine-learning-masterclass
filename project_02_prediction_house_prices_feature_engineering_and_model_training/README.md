@@ -6,7 +6,6 @@ Content:
 - countplots
 - boxplots (segmentations)
 - groupby
-- correlations as heatmaps
 - removing duplicates
 - fill NaN values
 - fix structural errors
