@@ -1,5 +1,5 @@
 # Youtube transcription
-Notebook for youtube transacription.
+Notebook for web api crawling (youtube transacription, trello-api).
 
 ## Get Started
 Run command below to give rights to execute bash scripts.

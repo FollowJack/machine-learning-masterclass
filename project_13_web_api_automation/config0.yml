@@ -1,5 +1,0 @@
-# Add you trello credentials here
-# remove zero from config name
-trello:
-  api_key:
-  token:

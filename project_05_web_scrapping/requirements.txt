@@ -6,3 +6,5 @@ nltk
 youtube_transcript_api
 bs4
 selenium
+py-trello
+pyyaml

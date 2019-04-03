@@ -1,4 +1,4 @@
-# Activity analysis
+# Twitter Sentiment Analysis
 Basic twitter sentiment analysis. Server is provided.
 
 
