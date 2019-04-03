@@ -11,5 +11,7 @@ Projects:
 
 
 In general autoamted scripts are provided. In any case you experience problems or having questions:
+--> Open up a Github Issue
 
-Open up a Github Issue
+Some projects demand lower python version to function proberly. My default python version was 3.6.
+--> Check in the scripts the virtualenv.sh for selecting the prober python version

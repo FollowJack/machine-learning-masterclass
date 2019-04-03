@@ -1,4 +1,4 @@
 #!/bin/bash
-virtualenv --python=/usr/local/bin/python3.7 venv;
+virtualenv --python=/usr/local/bin/python3.6 venv;
 source venv/bin/activate;
 which python;

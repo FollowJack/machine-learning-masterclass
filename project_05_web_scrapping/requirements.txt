@@ -1,7 +1,8 @@
 pandas
 numpy
-seaborn
 matplotlib
 wordcloud
 nltk
 youtube_transcript_api
+bs4
+selenium
