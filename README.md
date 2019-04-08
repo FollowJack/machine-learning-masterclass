@@ -7,6 +7,7 @@ Projects:
 - activity analysis,
 - sentiment analysis,
 - image classification,
+- natural language processing
 - ... and separate notebooks to get deeper understanding and apply my experience.
 
 
