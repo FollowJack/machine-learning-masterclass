@@ -1,5 +1,5 @@
 # Machine Learning Masterclass
-Machine Learning Masterclass.   
+
 Projects:
 - house price prediction,
 - employee analytics,
