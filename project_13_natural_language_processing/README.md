@@ -15,7 +15,7 @@ Sets of notebooks for Natural Language Processing.
 - multiclass classifier for language detection
 - multilabel classifier for sport politics labels detection
 - classification metrics (precision, recall, f1)
-
+- inspecion of reuters test data
 
 ## Get Started
 Run command below to give rights to execute bash scripts.
