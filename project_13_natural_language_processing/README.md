@@ -1,6 +1,21 @@
 # Natural Language Processing
 Sets of notebooks for Natural Language Processing.
 
+### Content
+- tokenization,
+- total term frequency
+- document frequency
+- stop words
+- stemming
+- n-grams
+- word clouds
+- term-frequency inverse-document-frequency
+- POS Tagging
+- binary classifier for sport report detection
+- multiclass classifier for language detection
+- multilabel classifier for sport politics labels detection
+
+
 ## Get Started
 Run command below to give rights to execute bash scripts.
 ```bash
