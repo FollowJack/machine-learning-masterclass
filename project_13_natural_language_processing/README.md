@@ -14,6 +14,7 @@ Sets of notebooks for Natural Language Processing.
 - binary classifier for sport report detection
 - multiclass classifier for language detection
 - multilabel classifier for sport politics labels detection
+- classification metrics (precision, recall, f1)
 
 
 ## Get Started
