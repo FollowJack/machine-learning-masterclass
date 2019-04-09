@@ -12,8 +12,6 @@ Run ```bash ./start.sh``` for jupyter notebook.
 
 After running the start.sh change Kernel in your jupyter notebook to ```venv```.
 
-Run ```bash ./start_server.sh``` for flask server.  
-
 ## Dependencies:
 See requirements.txt
 
