@@ -2629,7 +2629,9 @@
       <column datatype='real' default-format='c&quot;$&quot;#,##0' name='[Sales]' role='measure' type='quantitative' />
       <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
       <column datatype='string' name='[Sub-Category]' role='dimension' type='nominal' />
+      <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
       <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
       <column-instance column='[Sub-Category]' derivation='None' name='[none:Sub-Category:nk]' pivot='key' type='nominal' />
       <group name='[Top Customers by Profit]' name-style='unqualified' user:ui-builder='filter-group'>
         <groupfilter count='[Parameters].[Parameter 1]' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
@@ -2641,27 +2643,28 @@
       <drill-paths>
         <drill-path name='Location'>
           <field>[Country]</field>
-          <field>[State]</field>
           <field>[City]</field>
+          <field>[State]</field>
           <field>[Postal Code]</field>
         </drill-path>
+        <drill-path name='Order'>
+          <field>[Order ID]</field>
+          <field>[Order Date]</field>
+          <field>[Ship Date]</field>
+          <field>[Ship Mode]</field>
+        </drill-path>
         <drill-path name='Product'>
-          <field>[Category]</field>
-          <field>[Sub-Category]</field>
-          <field>[Product Name (group)]</field>
           <field>[Product Name]</field>
+          <field>[Sub-Category]</field>
+          <field>[Category]</field>
+          <field>[Product Name (group)]</field>
         </drill-path>
       </drill-paths>
       <folder name='Customer' role='dimensions'>
         <folder-item name='[Customer Name]' type='field' />
         <folder-item name='[Segment]' type='field' />
       </folder>
-      <folder name='Order' role='dimensions'>
-        <folder-item name='[Order Date]' type='field' />
-        <folder-item name='[Order ID]' type='field' />
-        <folder-item name='[Ship Date]' type='field' />
-        <folder-item name='[Ship Mode]' type='field' />
-      </folder>
+      <folder name='Order' role='dimensions' />
       <layout dim-ordering='alphabetic' dim-percentage='0.625348' group-percentage='0.0389972' measure-ordering='alphabetic' measure-percentage='0.270195' parameter-percentage='0.0654596' show-structure='false' />
       <style>
         <style-rule element='mark'>
@@ -2718,6 +2721,46 @@
               <bucket>&quot;Binders&quot;</bucket>
             </map>
           </encoding>
+          <encoding attr='color' field='[none:Country:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;United States&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:State:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;South Carolina&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Alabama&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Kentucky&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Tennessee&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Louisiana&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Arkansas&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Mississippi&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Virginia&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;North Carolina&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Florida&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Georgia&quot;</bucket>
+            </map>
+          </encoding>
         </style-rule>
       </style>
       <semantic-values>
@@ -2747,6 +2790,90 @@
     <mapsource name='Tableau' />
   </mapsources>
   <worksheets>
+    <worksheet name='Negative Profit Bar Chart'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Sample - Superstore' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='Sample - Superstore'>
+            <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='real' default-format='c&quot;$&quot;#,##0' name='[Profit]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[City]' derivation='None' name='[none:City:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Region]' derivation='None' name='[none:Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Profit]' derivation='Sum' name='[sum:Profit:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[Sample - Superstore].[none:City:nk]'>
+            <groupfilter count='5' end='bottom' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([Profit])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:City:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[Sample - Superstore].[none:Region:nk]'>
+            <groupfilter function='member' level='[none:Region:nk]' member='&quot;South&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[Sample - Superstore].[none:Region:nk]</column>
+            <column>[Sample - Superstore].[none:City:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[Sample - Superstore].[sum:Profit:qk]' palette='red_green_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[Sample - Superstore].[none:State:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([Sample - Superstore].[none:Country:nk] / ([Sample - Superstore].[none:State:nk] / [Sample - Superstore].[none:City:nk]))</rows>
+        <cols>[Sample - Superstore].[sum:Profit:qk]</cols>
+      </table>
+      <simple-id uuid='{169B40F3-C764-4656-B4CF-352093D81986}' />
+    </worksheet>
     <worksheet name='Profit Map'>
       <table>
         <view>
@@ -3020,7 +3147,7 @@
       </viewpoint>
       <simple-id uuid='{5B2D194C-A8C9-4AE5-8B55-02B8CED68EF6}' />
     </window>
-    <window class='worksheet' maximized='true' name='Profit Map'>
+    <window class='worksheet' name='Profit Map'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -3056,6 +3183,75 @@
         </highlight>
       </viewpoint>
       <simple-id uuid='{5D08DB2C-2D22-45E4-9160-F46015A1DE98}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Negative Profit Bar Chart'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='0' param='[Sample - Superstore].[none:State:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields>
+                    <field>[Sample - Superstore].[Longitude (generated)]</field>
+                  </x-fields>
+                  <y-fields>
+                    <field>[Sample - Superstore].[Latitude (generated)]</field>
+                  </y-fields>
+                </pane-descriptor>
+                <columns>
+                  <field>[Sample - Superstore].[none:Country:nk]</field>
+                  <field>[Sample - Superstore].[none:State:nk]</field>
+                  <field>[Sample - Superstore].[sum:Sales:qk]</field>
+                  <field>[Sample - Superstore].[Latitude (generated)]</field>
+                  <field>[Sample - Superstore].[Longitude (generated)]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;United States&quot;</value>
+                <value>&quot;Florida&quot;</value>
+                <value>7.0860000000000012</value>
+                <value>28.420000000000002</value>
+                <value>-81.549999999999997</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[Sample - Superstore].[none:City:nk]</field>
+            <field>[Sample - Superstore].[none:Country:nk]</field>
+            <field>[Sample - Superstore].[none:Region:nk]</field>
+            <field>[Sample - Superstore].[none:State:nk]</field>
+            <field>[Sample - Superstore].[sum:Profit:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{CE79B5FC-222D-452A-A95C-09F723DEE167}' />
     </window>
   </windows>
   <thumbnails>
