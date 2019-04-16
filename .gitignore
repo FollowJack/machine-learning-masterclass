@@ -111,3 +111,5 @@ project_08_pytorch/test
 */config.yml
 project_07_tensorflow_keras/data/test
 project_07_tensorflow_keras/data/train
+project_16_call_center_nlp/data/clean_table.csv
+project_16_call_center_nlp/data/consumer_complaints.csv
