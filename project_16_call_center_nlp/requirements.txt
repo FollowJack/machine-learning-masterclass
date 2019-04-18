@@ -1,9 +1,0 @@
-numpy
-pandas
-matplotlib
-seaborn
-missingno
-sqlalchemy
-openpyxl
-wordcloud
-nltk

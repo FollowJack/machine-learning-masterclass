@@ -43,3 +43,6 @@ wcwidth==0.1.7
 wheel>=0.24.0
 widgetsnbextension==1.2.3
 wordcloud==1.2.1
+openpyxl
+sqlalchemy
+missingno
