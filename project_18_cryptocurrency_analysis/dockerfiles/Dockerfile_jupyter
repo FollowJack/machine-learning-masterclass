@@ -1,0 +1,25 @@
+
+FROM python:3.5.0
+
+# make directories suited to your application
+RUN mkdir -p app
+
+WORKDIR /app
+
+EXPOSE 8888
+
+# copy contents from your local to your docker container
+COPY configs/requirements.txt configs/requirements.txt
+COPY scripts/pipeline.sh scripts/pipeline.sh
+# COPY src src
+# COPY models models
+
+RUN scripts/pipeline.sh dependencies
+RUN scripts/pipeline.sh freeze_dependencies
+RUN ls
+
+ENTRYPOINT ["jupyter", \
+  "notebook", \
+  "--ip=0.0.0.0", \
+  "--no-browser", \
+  "--allow-root"]
