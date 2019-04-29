@@ -14,7 +14,7 @@ COPY scripts/pipeline.sh scripts/pipeline.sh
 
 RUN scripts/pipeline.sh dependencies
 
-ENTRYPOINT ["jjupyter_labupyter", \
+ENTRYPOINT ["jupyter", \
   "lab", \
   "--ip=0.0.0.0", \
   "--no-browser", \

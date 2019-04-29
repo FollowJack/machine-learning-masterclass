@@ -4,11 +4,11 @@ function dependencies(){
   # upgrade pip
   pip install --upgrade pip
   # using venv kernel
-  pip install ipykernel;
-  pip install --upgrade ipykernel;
-  ipython kernel install --user --name=venv;
+  # pip install ipykernel;
+  # pip install --upgrade ipykernel;
+  # ipython kernel install --user --name=venv;
   # reinstall jupyter notebook
-  pip install --upgrade --force-reinstall --no-cache-dir jupyter;
+  # pip install --upgrade --force-reinstall --no-cache-dir jupyter;
   # install requirements
   pip install -r configs/requirements.txt;
 
@@ -36,6 +36,20 @@ function docker_run_jupyter(){
     --mount type=bind,source="$(pwd)"/notebooks,target=/app/notebooks \
     --mount type=bind,source="$(pwd)"/data,target=/app/data \
     --mount type=bind,source="$(pwd)"/configs,target=/app/configs \
+    jupyter_dev;
+
+}
+
+function docker_run_terminal(){
+  echo Run Docker terminal; # TODO
+
+  docker run \
+    -p 8888:8888 \
+    --rm \
+    --name jupyter_lab \
+    --mount type=bind,source="$(pwd)"/notebooks,target=/app/notebooks \
+    --mount type=bind,source="$(pwd)"/data,target=/app/data \
+    --mount type=bind,source="$(pwd)"/configs,target=/app/configs \
     jupyter_dev
 }
 
@@ -43,9 +57,9 @@ function freeze_dependencies(){
   pip freeze > configs/requirements.txt;
 }
 
-function run_jupyter(){
+function run_jupyter_lab(){
   echo Run jupyter notebook;
-  jupyter notebook;
+  jupyter lab;
   # ALternativelivy for no browser in virtual env
   # jupyter notebook --allow-root --ip 0.0.0.0 --no-browser;
 }
