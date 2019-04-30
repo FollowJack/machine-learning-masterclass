@@ -20,12 +20,13 @@ Content:
 ## Get Started
 Run command below to give rights to execute bash scripts.
 ```bash
-chmod +x start.sh scripts/dependencies.sh scripts/jupyter.sh scripts/virtualenv.sh
+chmod +x setup_dev.sh start_dev.sh scripts/pipeline.sh
 ```
 
-Run ```bash ./start.sh``` for jupyter notebook.   
+Run ```bash ./setup_dev.sh``` for creating docker image.   
 
-After running the start.sh change Kernel in your jupyter notebook to ```venv```.
+After setup run ```./start_dev``` for running jupyterlab in docker instance.
 
 ## Dependencies:
-See requirements.txt
+See dependencies.txt for original used dependencies.    
+See requirements.txt for freezed dependencies. (<-- Take this to make it run)
