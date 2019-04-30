@@ -1,0 +1,21 @@
+FROM python:3.7.0
+
+# make directories suited to your application
+RUN mkdir -p app
+
+WORKDIR /app
+
+# Doesn't seem to work
+# EXPOSE 8888
+
+# copy contents from your local to your docker container
+COPY configs/requirements.txt configs/requirements.txt
+COPY scripts/pipeline.sh scripts/pipeline.sh
+
+RUN scripts/pipeline.sh dependencies
+
+ENTRYPOINT ["jupyter", \
+  "lab", \
+  "--ip=0.0.0.0", \
+  "--no-browser", \
+  "--allow-root"]
