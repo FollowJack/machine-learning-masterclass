@@ -5,8 +5,9 @@ RUN mkdir -p app
 
 WORKDIR /app
 
-# Doesn't seem to work
+# Expose a port internally or a range of ports inside the container.
 # EXPOSE 8888
+# Use docker run -p for exposing port to host
 
 # copy contents from your local to your docker container
 COPY configs/requirements.txt configs/requirements.txt
