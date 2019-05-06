@@ -1,0 +1,15 @@
+FROM python:3
+
+WORKDIR /application
+
+COPY configs/requirements.txt ./
+RUN pip install -r requirements.txt
+
+COPY /scripts ./
+
+# django default port
+EXPOSE 8000
+
+RUN ls
+
+ENTRYPOINT ["./pipeline.sh", "run_django"]
